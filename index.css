@@ -46,10 +46,32 @@ header table {
     width:100%;
 }
 #logo {
-    width:20%;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+#logo img {
+    height: auto;
+    width: auto;
+    max-width: 100%;
+    max-height: 150px;
+    margin-right: 10px;
 }
 #navigation {
     width:80%;
+}
+h1 {
+    text-align: center;
+    margin-bottom: 1em;
+    white-space: nowrap;
+    color: rgb(81, 1, 17);
+}
+p {
+    text-align: justify;
+    text-justify: inter-word;
+    font-size: 1.2em;
+    margin: 0 auto;
+    color: #251825;
 }
 #magnify {
     width:100vw;
@@ -90,13 +112,14 @@ header table {
 #navigation a {
     color:inherit;
     text-decoration:none;
-    padding:5px 10px;
+    padding:5px 5px;
     border-bottom:2px solid transparent;
     margin-left:4vw;
     transition:0.4s ease-in-out;
+    font-size: 20px;
 }
 #navigation a:hover{
-    border-bottom:2px solid #fff;
+    border-bottom: 2px solid #fff; /* initial hover color */
 }
 #top_part {
     width:100%;
@@ -149,17 +172,22 @@ header table {
     background:#fff;
     border:3px solid rgb(81, 1, 17);
     padding:8px 40px;
-    width:35%;
     border-radius:80px;
     font-weight:bold;
     margin:2vh 0px;
     transition:0.4s ease-in-out;
+    white-space: nowrap;
+    min-width: 100px;  /* replace with your desired minimum width */
+    width: auto;  
 }
 .btn_one:hover {
     box-shadow:0px 10px 30px rgba(37, 24, 37, 0.8);
     cursor:pointer;
     color:#fff;
     background:rgb(60, 1, 12);
+}
+.button-div {
+    text-align: center;
 }
 #rightImage {
     width:100%;
@@ -274,14 +302,45 @@ header table {
     left:30px;
 }
 #footer {
-    width:100%;
-    padding:10vh 0px;
-    text-align:center;
-    font-weight:bold;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #fff;
+    padding: 20px;
 }
 #footer a {
-    color:rgb(49, 32, 49);
-    text-decoration:none;
+    color: #251825;
+    text-decoration: none;
+}
+#footer a:hover {
+    color: rgb(81, 1, 17);
+    font-weight: bold; /* Make the text bold on hover */
+}
+.footer-item p a {
+    text-decoration: none;
+    color: inherit;
+}
+.footer-item p a:hover {
+    text-decoration: underline;
+    color: rgb(81, 1, 17);
+    font-weight: bold; /* Make the text bold on hover */
+}
+#lighthouse-logo, #nyx-logo, #metalumina-logo {
+    max-height: 100px;
+    width: auto;
+    display: block;
+    margin: 0 auto;
+}
+#footer .footer-item {
+    flex: 1;
+    text-align: center; /* Center align text by default */
+}
+.metalumina-text {
+    text-align: right; /* Right align text for Metalumina */
+}
+.copyright {
+    margin-top: 10px;
+    text-align: center;
 }
 ::placeholder {
     color:#000;
@@ -302,8 +361,17 @@ button:focus {
 ::-webkit-scrollbar-thumb:hover {
     background: rgba(0, 0, 0,0.8); 
 }
+.captcha-send {
+    text-align: center;
+}
 
 @media (max-width: 1000px){
+    #header a:hover {
+        border-bottom: 2px solid #fff;
+    }
+    #header a.active {
+        border-bottom: 2px solid #251825;
+    }
     #photos {
     columns:1;
     column-gap:0%;
@@ -346,11 +414,14 @@ button:focus {
     box-shadow:0px 10px 20px rgba(37, 24, 37, 0.8);
     background:rgb(49, 32, 49);
     color:#fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     }
     .btn_one:hover {
         box-shadow:0px 10px 40px rgba(37, 24, 37, 0.8);
         cursor:pointer;
-    }
+    }    
     #contact table tr td {
         width:100%;
         display:block;
@@ -385,7 +456,55 @@ button:focus {
         text-align:center;
         padding:15px 0px;
     }
-    #navigation a {
-        color:#000;
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 2rem;
+        height: 2rem;
+        cursor: pointer;
+        z-index: 1001;
+    }
+    .hamburger div {
+        width: 2rem;
+        height: 0.25rem;
+        background-color: #251825;
+        transition: all 0.3s linear;
+    }
+    #navigation {
+        position: absolute;
+        height: 100vh;
+        width: 100vw;
+        background: #fff;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        top: 0;
+        left: 0;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+    }
+    #navigation.active {
+        transform: translateX(0);
+    }#navigation {
+        position: absolute;
+        height: 100vh;
+        width: 100vw;
+        background: #fff;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        top: 0;
+        left: 0;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+        }
+        #navigation.active {
+        transform: translateX(0);
+        }
+    }
+@media (max-width: 600px) {
+    #logo img {
+        height: 75px;
     }
 }
