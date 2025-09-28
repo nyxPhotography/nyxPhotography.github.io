@@ -506,3 +506,170 @@ button:focus {
         height: 75px;
     }
 }
+
+/* ——— Chips (match button border, fill on hover) ——— */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  margin-top: 8px;
+}
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 14px;
+  line-height: 1;
+  background: #fff;                      /* chips = white, like btn default */
+  color: #000;                           /* black text per your note */
+  border: 3px solid rgb(81, 1, 17);      /* same as .btn_one border */
+  transition: 0.25s ease-in-out;
+}
+.chip i { font-size: 14px; color: #000; }
+.chip:hover {
+  background: rgb(60, 1, 12);            /* same hover fill as .btn_one */
+  color: #fff;
+  box-shadow: 0 10px 30px rgba(37,24,37,0.8);
+}
+.chip:hover i { color: #fff; }
+
+/* ——— Emphasis words inside paragraphs ——— */
+.emph {
+  color: rgb(81, 1, 17);
+  font-weight: 600;
+}
+
+/* Optional: make hero subtitle breathe a bit */
+.subtitle { margin-top: 8px; font-weight: 600; }
+
+/* Buttons: ensure no underline anywhere */
+.btn_one,
+.btn_one:link,
+.btn_one:visited,
+.btn_one i { text-decoration: none !important; }
+
+/* Hero stack: center buttons, chips, socials */
+.hero-stack { text-align: center; }
+.hero-stack .cta-row { display:inline-flex; gap:12px; flex-wrap:wrap; justify-content:center; margin:16px 0; }
+.hero-stack .social-row { display:flex; justify-content:center; gap:14px; margin-top:16px; font-size:1.4rem; }
+
+/* Chips — larger, concise, not interactive (no hover) */
+.chips { display:flex; flex-wrap:wrap; gap:10px 14px; justify-content:center; margin-top:10px; }
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 16px;              /* larger text */
+  line-height: 1;
+  background: #fff;             /* black text on white */
+  color: #000;
+  border: 3px solid rgb(81, 1, 17);  /* match your button border color */
+  cursor: default;              /* not a button */
+}
+.chip i { font-size: 16px; color: #000; }
+/* Remove hover fill on chips so they don't behave like buttons */
+.chip:hover { background: #fff; color:#000; box-shadow:none; }
+.chip:hover i { color:#000; }
+
+/* Experience chips layout (centered like hero) */
+#bio .chips-about { justify-content:center; }
+
+/* Emphasis words inside paragraphs */
+.emph { color: rgb(81, 1, 17); font-weight: 600; }
+
+/* Section headings and intro copy alignment (keep your existing styles; this normalizes Connect) */
+#connect h1, #connect > p { text-align: center; }
+
+/* Connect: center socials under address; side-by-side CTAs on the right */
+.connect-socials { display:flex; gap:14px; margin-top:10px; font-size:1.3rem; }
+#connect .cta-row-connect { display:flex; gap:12px; flex-wrap:wrap; justify-content:center; }
+#connect .cta-hint { text-align:center; margin-top:10px; opacity:.85; }
+
+/* Ensure hero buttons & connect buttons never get underlines from global link rules */
+#top_part a.btn_one,
+#connect a.btn_one { text-decoration:none !important; }
+
+/* Ensure .btn_one never shows underlines (including icons) */
+.btn_one,
+.btn_one:link,
+.btn_one:visited,
+.btn_one i { text-decoration: none !important; }
+
+/* HERO: center stack + bigger socials; split subtitle lines */
+.hero-stack { text-align: center; }
+.hero-stack .cta-row { display:inline-flex; gap:12px; flex-wrap:wrap; justify-content:center; margin:16px 0; }
+.hero-stack .social-row { display:flex; justify-content:center; gap:16px; margin-top:16px; font-size:1.4rem; }
+.subtitle { margin-top:8px; font-weight:600; }
+
+/* CHIPS: larger, concise, not interactive */
+.chips { display:flex; flex-wrap:wrap; gap:10px 14px; justify-content:center; margin-top:10px; }
+.chip {
+  display:inline-flex; align-items:center; gap:8px;
+  padding:8px 16px; border-radius:999px; font-size:16px; line-height:1;
+  background:#fff; color:#000; border:3px solid rgb(81, 1, 17);
+  cursor: default;
+}
+.chip i { font-size:16px; color:#000; }
+.chip:hover { background:#fff; color:#000; box-shadow:none; }
+.chip:hover i { color:#000; }
+
+/* Experience chips block (center) */
+#bio .chips-about { justify-content:center; }
+
+/* Emphasis word style */
+.emph { color: rgb(81, 1, 17); font-weight:600; }
+
+/* CONNECT: allow your global section heading/underline rules to apply */
+#connect h1, #connect > p { text-align: left; }      /* revert any accidental centering */
+.connect-socials { display:flex; gap:14px; margin-top:10px; font-size:1.3rem; }
+
+/* Right-column CTAs: side-by-side and centered within the right box */
+#connect .cta-row-connect { display:flex; gap:12px; flex-wrap:wrap; justify-content:center; }
+#connect .cta-hint { text-align:center; margin-top:10px; opacity:.85; }
+
+/* Buttons: never underline */
+.btn_one,
+.btn_one:link,
+.btn_one:visited,
+.btn_one i { text-decoration: none !important; }
+
+/* HERO: center everything */
+.hero-stack { text-align: center; }
+.subtitle { margin-top: 8px; font-weight: 600; text-align: center; }
+.subtitle .subtitle-second-line { display: block; }
+
+/* HERO chips + socials */
+.chips { display:flex; flex-wrap:wrap; gap:10px 14px; justify-content:center; margin-top:10px; }
+.chip {
+  display:inline-flex; align-items:center; gap:8px;
+  padding:8px 16px; border-radius:999px; font-size:16px; line-height:1;
+  background:#fff; color:#000; border:3px solid rgb(81, 1, 17);
+  cursor: default;
+}
+.chip i { font-size:16px; color:#000; }
+.chip:hover { background:#fff; color:#000; box-shadow:none; }
+.chip:hover i { color:#000; }
+
+/* subtle divider between chips and socials in hero */
+.hero-divider {
+  width: 180px; height: 1px; margin: 14px auto 12px;
+  background: rgba(81, 1, 17, 0.25);
+}
+
+/* HERO socials: larger and centered */
+.hero-socials { display:flex; justify-content:center; gap:16px; font-size:1.5rem; }
+
+/* EXPERIENCE spacing: add room under paragraph and chips */
+#bio p { margin-bottom: 14px; }
+#bio .chips-about { justify-content:center; margin-top: 14px; margin-bottom: 8px; }
+
+/* CONTACT right-side CTAs: spaced & centered within the right column */
+.cta-row-contact { display:flex; gap:12px; flex-wrap:wrap; justify-content:center; }
+#contact .cta-hint { text-align:center; margin-top:12px; opacity:.85; }
+
+/* CONTACT socials sizing to match hero feel */
+.connect-socials { display:flex; gap:14px; margin-top:10px; font-size:1.3rem; }
